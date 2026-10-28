@@ -31,9 +31,9 @@ cmake --version
 git --version
 ~~~
 
-Bila sudah clone sebelumnya, **jangan clone ulang**: masuk folder repository lalu jalankan \`git pull origin main\`.
+Bila sudah clone sebelumnya, **jangan clone ulang**: masuk folder repository lalu jalankan `git pull origin main`.
 
-**Penting:** folder ZIP lama (\`voiceforge-lite-v0.1-source\`) bukan clone Git repository ini. Untuk pertama kali, clone ke folder baru agar riwayat Git bersih.
+**Penting:** folder ZIP lama (`voiceforge-lite-v0.1-source`) bukan clone Git repository ini. Untuk pertama kali, clone ke folder baru agar riwayat Git bersih.
 
 ## 2. Build Windows
 
@@ -56,7 +56,7 @@ Tes executable:
 
 Jika script melaporkan CMake tidak ditemukan padahal sudah terinstal, buka terminal baru atau gunakan **x64 Native Tools Command Prompt for VS 2022**.
 
-> Peringatan \`FetchContent_Populate is deprecated\`, \`C4244\` dari miniaudio, atau \`C4305\` dari Signalsmith tidak otomatis berarti build gagal. Cari baris \`error C...\` atau \`FAILED\` untuk penyebab sebenarnya.
+> Peringatan `FetchContent_Populate is deprecated`, `C4244` dari miniaudio, atau `C4305` dari Signalsmith tidak otomatis berarti build gagal. Cari baris `error C...` atau `FAILED` untuk penyebab sebenarnya.
 
 ## 3. Tes kemampuan laptop tanpa mikrofon
 
@@ -92,7 +92,7 @@ Untuk testing sebelum mengatur Discord, boleh memilih output berupa headphone; j
 
 ## Preset awal
 
-| Karakter suara | \`--pitch\` | \`--formant\` |
+| Karakter suara | `--pitch` | `--formant` |
 | --- | ---: | ---: |
 | Subtle | 3 | 1.08 |
 | Feminine experiment | 5 | 1.16 |
@@ -102,19 +102,19 @@ Semua preset **eksperimental**. Pitch tinggi dapat memperburuk artefak, dan natu
 
 ## Troubleshooting
 
-**\`cmake\` tidak dikenali:** install CMake atau perbaiki PATH, lalu restart terminal.
+**`cmake` tidak dikenali:** install CMake atau perbaiki PATH, lalu restart terminal.
 
-**\`signalsmith-linear/stft.h\` missing:** pastikan \`CMakeLists.txt\` versi repository ini sudah dipakai dan konfigurasi online berhasil. Bila build cache dari ZIP lama, gunakan folder clone bersih.
+**`signalsmith-linear/stft.h` missing:** pastikan `CMakeLists.txt` versi repository ini sudah dipakai dan konfigurasi online berhasil. Bila build cache dari ZIP lama, gunakan folder clone bersih.
 
-**\`error C2589\` atau \`C2059\` pada \`std::min/max\`:** macro \`min/max\` Windows bentrok; repository sudah mendefinisikan \`NOMINMAX\` di CMake dan source. Pastikan branch \`main\` paling baru.
+**`error C2589` atau `C2059` pada `std::min/max`:** macro `min/max` Windows bentrok; repository sudah mendefinisikan `NOMINMAX` di CMake dan source. Pastikan branch `main` paling baru.
 
-**Tidak ada suara:** cek angka input dan output melalui \`--list-devices\`, perizinan mikrofon Windows, Discord Input Device, dan apakah terminal VoiceForge masih berjalan.
+**Tidak ada suara:** cek angka input dan output melalui `--list-devices`, perizinan mikrofon Windows, Discord Input Device, dan apakah terminal VoiceForge masih berjalan.
 
-**Crackle/lag:** tutup program lain yang berat, tes \`--benchmark\`, coba pitch lebih rendah, dan periksa sample-rate audio device. Blok DSP 10 ms **tidak berarti total latency hanya 10 ms**.
+**Crackle/lag:** tutup program lain yang berat, tes `--benchmark`, coba pitch lebih rendah, dan periksa sample-rate audio device. Blok DSP 10 ms **tidak berarti total latency hanya 10 ms**.
 
 ## Status dan arah pengembangan
 
-- **v0.1.2:** CLI dengan input/output pilihan, realtime pitch/formant, gain, benchmark, dependensi Signalsmith Linear, perbaikan \`NOMINMAX\`.
+- **v0.1.2:** CLI dengan input/output pilihan, realtime pitch/formant, gain, benchmark, dependensi Signalsmith Linear, perbaikan `NOMINMAX`.
 - Belum diuji build dan kualitas di laptop Windows pengguna. Status berhasil hanya boleh dinyatakan setelah dikompilasi dan dicek di mesin target.
 - Berikutnya: GUI ringan, preview suara, pengaturan preset secara langsung, meter audio, bypass, device hotplug, pengukuran latensi nyata dan uji DSP alternatif untuk naturalness.
 
