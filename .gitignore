@@ -1,0 +1,8 @@
+build/
+.vs/
+out/
+*.obj
+*.pdb
+*.ilk
+*.exe
+.DS_Store
